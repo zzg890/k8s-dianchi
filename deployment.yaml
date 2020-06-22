@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: dianchi
 spec:
-  replica: 3
+  replicas: 3
   template:
     metadata:
       app: dianchi
@@ -19,7 +19,7 @@ kind: Deployment
 metadata:
   name: pgadmin
 spec:
-  replica: 1
+  replicas: 1
   template:
     metadata:
       app: pgadmin
