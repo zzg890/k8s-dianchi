@@ -11,4 +11,4 @@ spec:
     path: /srv/volumes/nfs-pv
   claimRef:
     namespace: default
-    name: dh-postgresql-ha-postgresql-0
+    name: data-storage-nfs-server-provisioner-0
