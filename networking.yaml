@@ -46,7 +46,8 @@ spec:
     - match:
         - uri:
             prefix: pgadmin
-          rewrite: /
+      rewrite: 
+        uri: /
       route:
         - destination:
             host: pgadmin
