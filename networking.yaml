@@ -6,11 +6,12 @@ spec:
   selector:
     istio: ingressgateway
   servers:
-    - port: 80
-      name: http
-      protocol: HTTP
-  hosts:
-    - "*"
+    - port:
+        number: 80
+        name: http
+        protocol: HTTP
+      hosts:
+        - "*"
 ---
 apiVerion: v1
 kind: Service
