@@ -1,0 +1,57 @@
+apiVersion: networking.istio.io/v1alpha3
+kind: Gateway
+metadata:
+  name: dianchi
+spec:
+  selector:
+    istio: ingressgateway
+  servers:
+    - port: 80
+      name: http
+      protocol: HTTP
+  hosts:
+    - "*"
+---
+apiVerion: v1
+kind: Service
+metadata:
+  name: dianchi
+spec:
+  selector:
+    app: dianchi
+  ports:
+    - port: 80
+---
+apiVerion: v1
+kind: Service
+metadata:
+  name: pgadmin
+spec:
+  selector:
+    app: pgadmin
+  ports:
+    - port: 80
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: dianchi
+spec:
+  hosts:
+    - "*"
+  gateways:
+    - dianchi
+  http:
+    - match:
+        - uri:
+            prefix: pgadmin
+      route:
+        - destination:
+          host: pgadmin
+          port:
+            number: 80
+    - route:
+        - destination:
+          host: dianchi
+          port:
+            number: 80

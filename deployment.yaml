@@ -13,3 +13,24 @@ spec:
           image: dianchi.azurecr.cn/dianchi:latest
           ports:
             - containerPort: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: pgadmin
+spec:
+  replica: 1
+  template:
+    metadata:
+      app: pgadmin
+    spec:
+      containers:
+        - name: pgadmin
+          image: dpage/pgadmin4:latest
+          ports:
+            - containerPort: 80
+          env:
+            - name: PGADMIN_DEFAULT_EMAIL
+              value: admin@dianchi.com
+            - name: PGADMIN_DEFAULT_PASSWORD
+              value: P@ssw0rd         
