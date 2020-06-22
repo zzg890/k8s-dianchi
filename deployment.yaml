@@ -12,11 +12,11 @@ spec:
       labels:
         app: dianchi
     spec:
+      imagePullSecrets:
+        - name: azurecrkey
       containers:
         - name: dianchi
           image: dianchi.azurecr.cn/dianchi:latest
-          imagePullSecrets:
-            - name: azurecrkey
           ports:
             - containerPort: 80
 ---
