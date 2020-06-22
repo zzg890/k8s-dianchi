@@ -53,6 +53,6 @@ spec:
             number: 80
     - route:
         - destination:
-          host: dianchi
-          port:
-            number: 80
+            host: dianchi
+            port:
+              number: 80
