@@ -6,7 +6,8 @@ spec:
   replicas: 3
   template:
     metadata:
-      app: dianchi
+      labels:
+        app: dianchi
     spec:
       containers:
         - name: dianchi
@@ -22,7 +23,8 @@ spec:
   replicas: 1
   template:
     metadata:
-      app: pgadmin
+      labels:
+        app: pgadmin
     spec:
       containers:
         - name: pgadmin
@@ -33,4 +35,4 @@ spec:
             - name: PGADMIN_DEFAULT_EMAIL
               value: admin@dianchi.com
             - name: PGADMIN_DEFAULT_PASSWORD
-              value: P@ssw0rd         
+              value: P@ssw0rd
