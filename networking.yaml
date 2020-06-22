@@ -45,7 +45,7 @@ spec:
   http:
     - match:
         - uri:
-            prefix: pgadmin
+            prefix: /pgadmin
       rewrite: 
         uri: /
       route:
