@@ -5,7 +5,8 @@ metadata:
 spec:
   replicas: 3
   selector:
-    app: dianchi
+    matchLabels:
+      app: dianchi
   template:
     metadata:
       labels:
@@ -24,7 +25,8 @@ metadata:
 spec:
   replicas: 1
   selector:
-    app: pgadmin
+    matchLabels:
+      app: pgadmin
   template:
     metadata:
       labels:
@@ -40,4 +42,3 @@ spec:
               value: admin@dianchi.com
             - name: PGADMIN_DEFAULT_PASSWORD
               value: P@ssw0rd
-      
