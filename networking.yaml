@@ -48,9 +48,9 @@ spec:
             prefix: pgadmin
       route:
         - destination:
-          host: pgadmin
-          port:
-            number: 80
+            host: pgadmin
+            port:
+              number: 80
     - route:
         - destination:
             host: dianchi
