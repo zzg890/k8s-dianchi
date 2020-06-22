@@ -580,7 +580,7 @@ persistence:
   ## If undefined (the default) or set to null, no storageClassName spec is
   ## set, choosing the default provisioner.
   ##
-  # storageClass: "-"
+  storageClass: "rook-ceph-block"
   ## The path the volume will be mounted at, useful when using different
   ## PostgreSQL images.
   ##
