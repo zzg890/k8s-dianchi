@@ -1,0 +1,15 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dianchi
+spec:
+  replica: 3
+  template:
+    metadata:
+      app: dianchi
+    spec:
+      containers:
+        - name: dianchi
+          image: dianchi.azurecr.cn/dianchi:latest
+          ports:
+            - containerPort: 80
