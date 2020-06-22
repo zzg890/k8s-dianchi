@@ -62,6 +62,6 @@ spec:
   http:   
     - route:
         - destination:
-            host: dianchi
+            host: pgadmin
             port:
               number: 80
