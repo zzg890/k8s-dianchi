@@ -39,20 +39,27 @@ metadata:
   name: dianchi
 spec:
   hosts:
-    - "*"
+    - "www.dianchi.corp"
+    - "dianchi.corp"
   gateways:
     - dianchi
-  http:
-    - match:
-        - uri:
-            prefix: /pgadmin
-      rewrite: 
-        uri: /
-      route:
+  http:  
+    - route:
         - destination:
-            host: pgadmin
+            host: dianchi
             port:
               number: 80
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: dianchi
+spec:
+  hosts:
+    - "pgadmin.dianchi.corp"
+  gateways:
+    - dianchi
+  http:   
     - route:
         - destination:
             host: dianchi
