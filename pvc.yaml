@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: PresistentVolumeClaim
+metadata:
+  name: nfs-pvc
+  storageClassName: "nfs"
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 20Gi
