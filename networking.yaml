@@ -13,7 +13,7 @@ spec:
       hosts:
         - "*"
 ---
-apiVerion: v1
+apiVersion: v1
 kind: Service
 metadata:
   name: dianchi
@@ -23,7 +23,7 @@ spec:
   ports:
     - port: 80
 ---
-apiVerion: v1
+apiVersion: v1
 kind: Service
 metadata:
   name: pgadmin
