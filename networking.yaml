@@ -41,6 +41,8 @@ spec:
   hosts:
     - "www.dianchi.corp"
     - "dianchi.corp"
+    - "www.mm-zzg.cn"
+    - "mm-zzg.cn"
   gateways:
     - dianchi
   http:  
@@ -57,6 +59,7 @@ metadata:
 spec:
   hosts:
     - "pgadmin.dianchi.corp"
+    - "pgadmin.mm-zzg.cn"
   gateways:
     - dianchi
   http:   
