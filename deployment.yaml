@@ -19,6 +19,13 @@ spec:
           image: dianchi.azurecr.cn/dianchi:latest
           ports:
             - containerPort: 80
+          volumeMounts: 
+            - mountPath: /app/config
+              name: config
+      volumes:
+        - configMap:
+            name: dianchi
+          name: config
 ---
 apiVersion: apps/v1
 kind: Deployment
