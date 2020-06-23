@@ -45,7 +45,7 @@ spec:
     - "mm-zzg.cn"
   gateways:
     - dianchi
-  http:  
+  http:
     - route:
         - destination:
             host: dianchi
@@ -62,7 +62,7 @@ spec:
     - "pgadmin.mm-zzg.cn"
   gateways:
     - dianchi
-  http:   
+  http:
     - route:
         - destination:
             host: pgadmin
@@ -79,9 +79,25 @@ spec:
     - "kiali.mm-zzg.cn"
   gateways:
     - dianchi
-  http:   
+  http:
     - route:
         - destination:
             host: kiali.istio-system.svc.cluster.local
             port:
               number: 20001
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: grafana
+spec:
+  hosts:
+    - "grafana.dianchi.corp"
+  gateways:
+    - dianchi
+  http:
+    - route:
+        - destination:
+            host: grafana.istio-system.svc.cluster.local
+            port:
+              number: 3000
