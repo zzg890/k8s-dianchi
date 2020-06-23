@@ -68,3 +68,20 @@ spec:
             host: pgadmin
             port:
               number: 80
+---
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: kiali
+spec:
+  hosts:
+    - "kiali.dianchi.corp"
+    - "kiali.mm-zzg.cn"
+  gateways:
+    - dianchi
+  http:   
+    - route:
+        - destination:
+            host: kiali.istio-system.svc.cluster.local
+            port:
+              number: 80
